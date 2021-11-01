@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn">Click</button>
+    </div>
+    <script>
+        function rand(m, n) {
+            return Math.ceil(Math.random() * (n-m+1)) + m - 1;
+        }
+
+        // 回调地狱缺点 1.不易阅读 2.不便异常处理
+        const a = document.querySelector("#btn");
+        console.log(a);
+        a.addEventListener('click', function(){
+            // setTimeout(()=> {
+            //     let n = rand(1, 100);
+            //     if (n <= 30) {
+            //         console.log('中奖');
+            //     } else {
+            //         console.log('未中奖');
+            //     }
+            // }, 1000);
+
+            const p = new Promise((resolve, reject) => {
+                setTimeout(()=> {
+                    let n = rand(1, 100);
+                    if (n <= 30) {
+                        resolve(n);
+                    } else {
+                        reject(n);
+                    }
+                }, 1000);
+            });
+            
+            p.then((value) => {
+                console.log('中奖', value);
+            }, (reason) => {
+                console.log('未中奖', reason);
+            })
+
+        });
+    </script>
+</body>
+</html>
