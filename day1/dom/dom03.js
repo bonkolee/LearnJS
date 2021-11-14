@@ -4,7 +4,7 @@ var img = document.getElementsByTagName('img')[0];
 console.log(img);
 var imgList = ['./image/IMG_3304.jpeg','./image/IMG_3305.jpeg',
 './image/IMG_3306.jpeg','./image/IMG_3307.jpeg','./image/IMG_3308.jpeg',
-'./image/IMG_3309.jpeg',]
+'./image/IMG_3309.jpeg',];
 var index = 0;
 
 prev.onclick = function() {
