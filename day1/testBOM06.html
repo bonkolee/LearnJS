@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+         * Json
+         * Javascript Object Notation
+         * 分类：1.对象{} 2.数组[]
+         * JSON中允许的值：1.字符串 2.数值 3.布尔值 4.null 5.对象 6.数组
+         */
+        let obj = '{"name": "Bonko", "age": 18, "gender": "male"}';
+        let arr = '[1, 2, 3, "a", "b"]';
+        console.log(obj, typeof obj);
+        console.log(arr, typeof arr);
+        let jsonObj = JSON.parse(obj);
+        let jsonArr = JSON.parse(arr);
+        console.log(jsonObj, typeof jsonObj);
+        console.log(jsonArr, typeof jsonArr);
+        let strObj = JSON.stringify(jsonObj);
+        let strArr = JSON.stringify(jsonArr);
+        console.log(strObj, typeof strObj);
+        console.log(strArr, typeof strArr);
+    </script>
+</body>
+</html>
